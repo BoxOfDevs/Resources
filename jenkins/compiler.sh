@@ -34,7 +34,7 @@ wp="install_log/log_wget_php"
 	chmod 777 PHP* >>./$lp 2>>./$lpe
 	tar zxvf PHP* >>./$lp 2>>./$lpe
 	rm -r PHP* >>./$lp 2>>./$lpe
-	wget --no-check-certificate https://raw.githubusercontent.com/BoxOfDevs/JenkinsResources/master/SCRIPT.php >>./$w 2>>./$w
+	wget --no-check-certificate https://raw.githubusercontent.com/BoxOfDevs/Resources/master/jenkins/SCRIPT.php >>./$w 2>>./$w
 	chmod 777 SCRIPT.php >>./$l 2>>./$le
 	mkdir plugins >>./$l 2>>./$le
   cd plugins
