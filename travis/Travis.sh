@@ -22,4 +22,4 @@ echo "Downloading php script..."
 curl -o Travis.php 'https://cloud.himbeer.me/bod/travisgen.php?slug='$TRAVIS_REPO_SLUG'&type=php'
 
 echo "Executing php script..."
-php Travis.php
+./bin/php7/bin/php Travis.php
