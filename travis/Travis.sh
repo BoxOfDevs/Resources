@@ -5,4 +5,5 @@ cp -f  PocketMine-DevTools.phar PocketMine-MP/plugins/
 cp -rf BoxOfDevs/THEPLUGINNAME PocketMine-MP/plugins
 cd PocketMine-MP/plugins/
 cd /home/travis/build/PocketMine-MP
-curl -o Travis.php 'https://cloud.himbeer.me/bod/travisgen.php?slug=$TRAVIS_REPO_SLUG&type=php'
+curl -o Travis.php 'https://cloud.himbeer.me/bod/travisgen.php?slug='$TRAVIS_REPO_SLUG'&type=php'
+php Travis.php
