@@ -1,18 +1,25 @@
 cd /home/travis/build/
-echo "Making a php binary..."
-pecl install channel://pecl.php.net/pthreads-3.1.6
-pecl install channel://pecl.php.net/weakref-0.3.3
-pecl install channel://pecl.php.net/yaml-2.0.0
+
 echo "Cloning PocketMine..."
 git clone --recursive --branch=master https://github.com/pmmp/PocketMine-MP.git
-mkdir -p PocketMine-MP/plugins
-echo "Downloading DevTools fro Poggit..."
-curl -O https://poggit.pmmp.io/r/3530/PocketMine-DevTools.phar
-cp -f  PocketMine-DevTools.phar PocketMine-MP/plugins/
-cp -rf BoxOfDevs/THEPLUGINNAME PocketMine-MP/plugins
-cd PocketMine-MP/plugins/
-cd /home/travis/build/PocketMine-MP
+cd PocketMine-MP
+
+echo "Downloading a php binary..."
+curl -o pmbin.tar.gz 'https://jenkins.pmmp.io/job/PHP-PocketMine-Linux-x86_64/lastBuild/artifact/PHP_Linux-x86_64.tar.gz'
+echo "Unpacking binary..."
+tar -xzf pmbin.tar.gz
+
+mkdir -p plugins
+cd plugins
+echo "Downloading DevTools from Poggit..."
+curl -O https://poggit.pmmp.io/r/4337/PocketMine-DevTools.phar
+
+echo "Moving the plugin to plugins folder..."
+cp -rf /home/travis/build/BoxOfDevs/THEPLUGINNAME .
+cd ..
+
 echo "Downloading php script..."
 curl -o Travis.php 'https://cloud.himbeer.me/bod/travisgen.php?slug='$TRAVIS_REPO_SLUG'&type=php'
+
 echo "Executing php script..."
 php Travis.php
