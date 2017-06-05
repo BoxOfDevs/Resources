@@ -1,5 +1,5 @@
 <?php
-$server = proc_open(./bin/php7/bin/php.' src/pocketmine/PocketMine.php --no-wizard --disable-readline', [
+$server = proc_open('./bin/php7/bin/php src/pocketmine/PocketMine.php --no-wizard --disable-readline', [
     0 => ['pipe', 'r'],
     1 => ['pipe', 'w'],
     2 => ['pipe', 'w'],
