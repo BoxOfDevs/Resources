@@ -5,14 +5,14 @@ git clone --recursive --branch=master https://github.com/pmmp/PocketMine-MP.git
 cd PocketMine-MP
 
 echo "Downloading a php binary..."
-curl -o pmbin.tar.gz 'https://jenkins.pmmp.io/job/PHP-PocketMine-Linux-x86_64/lastBuild/artifact/PHP_Linux-x86_64.tar.gz'
+curl -o pmbin.tar.gz 'https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz'
 echo "Unpacking binary..."
 tar -xzf pmbin.tar.gz
 
 mkdir -p plugins
 cd plugins
 echo "Downloading DevTools from Poggit..."
-curl -O https://poggit.pmmp.io/r/7212/PocketMine-DevTools.phar
+curl -O https://poggit.pmmp.io/r/11514/PocketMine-DevTools_dev-60.phar
 
 echo "Moving the plugin to plugins folder..."
 cp -rf /home/travis/build/BoxOfDevs/THEPLUGINNAME .
