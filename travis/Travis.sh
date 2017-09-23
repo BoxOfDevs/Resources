@@ -12,7 +12,7 @@ tar -xzf pmbin.tar.gz
 mkdir -p plugins
 cd plugins
 echo "Downloading DevTools from Poggit..."
-curl -O https://poggit.pmmp.io/r/11514/PocketMine-DevTools_dev-60.phar
+curl -O https://poggit.pmmp.io/r/11776/PocketMine-DevTools_dev-61.phar
 
 echo "Moving the plugin to plugins folder..."
 cp -rf /home/travis/build/BoxOfDevs/THEPLUGINNAME .
