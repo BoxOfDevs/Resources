@@ -1,8 +1,13 @@
 cd /home/travis/build/
 
-echo "Cloning PocketMine..."
-git clone --recursive --branch=master https://github.com/pmmp/PocketMine-MP.git
+mkdir PocketMine-MP
 cd PocketMine-MP
+echo "Getting PocketMine .phar and DevTools..."
+curl -o https://jenkins.pmmp.io/job/PocketMine-MP/lastSuccessfulBuild/artifact/*zip*/archive.zip
+echo "Unpacking PocketMine .phar and DevTools..."
+unzip archive.zip
+echo "Renaming the PocketMine .phar to PocketMine-MP.phar
+rename "s/PocketMine-MP_.*\.phar/PocketMine-MP\.phar/" *.phar
 
 echo "Downloading a php binary..."
 curl -o pmbin.tar.gz 'https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz'
@@ -11,8 +16,8 @@ tar -xzf pmbin.tar.gz
 
 mkdir -p plugins
 cd plugins
-echo "Downloading DevTools from Poggit..."
-curl -O https://poggit.pmmp.io/r/11776/PocketMine-DevTools_dev-61.phar
+echo "Moving DevTools into correct folder..."
+mv ../DevTools.phar .
 
 echo "Moving the plugin to plugins folder..."
 cp -rf /home/travis/build/BoxOfDevs/THEPLUGINNAME .
