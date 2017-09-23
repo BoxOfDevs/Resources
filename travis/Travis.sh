@@ -6,7 +6,7 @@ echo "Getting PocketMine .phar and DevTools..."
 wget 'https://jenkins.pmmp.io/job/PocketMine-MP/lastSuccessfulBuild/artifact/*zip*/archive.zip'
 echo "Unpacking PocketMine .phar and DevTools..."
 unzip archive.zip
-echo "Renaming the PocketMine .phar to PocketMine-MP.phar
+echo "Renaming the PocketMine .phar to PocketMine-MP.phar"
 rename "s/PocketMine-MP_.*\.phar/PocketMine-MP\.phar/" *.phar
 
 echo "Downloading a php binary..."
