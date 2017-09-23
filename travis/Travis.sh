@@ -1,7 +1,6 @@
 cd /home/travis/build/
 
 mkdir PocketMine-MP
-cd PocketMine-MP
 echo "Getting PocketMine .phar and DevTools..."
 wget 'https://jenkins.pmmp.io/job/PocketMine-MP/lastSuccessfulBuild/artifact/*zip*/archive.zip'
 echo "Unpacking PocketMine .phar and DevTools..."
