@@ -12,11 +12,11 @@ fclose($pipes[0]);
 fclose($pipes[1]);
 fclose($pipes[2]);
 echo "\n\nReturn value: ".proc_close($server)."\n";
-if(count(glob('plugins/DevTools/THEPLUGINNAME*.phar')) === 0){
+if(count(glob('plugin_data/DevTools/THEPLUGINNAME*.phar')) === 0){
     echo "Failed to create a THEPLUGINNAME phar!\n";
     exit(1);
 }else{
-    $fn = glob('plugins/DevTools/THEPLUGINNAME*');
+    $fn = glob('plugin_data/DevTools/THEPLUGINNAME*');
     rename($fn[0], 'plugins/DevTools/THEPLUGINNAME.phar');
     echo "A THEPLUGINNAME phar was created!\n";
     exit(0);
