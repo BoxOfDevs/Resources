@@ -9,7 +9,7 @@ echo "Renaming the PocketMine .phar to PocketMine-MP.phar"
 rename "s/PocketMine-MP_.*\.phar/PocketMine-MP\.phar/" *.phar
 
 echo "Downloading a php binary..."
-curl -o pmbin.tar.gz 'https://raw.githubusercontent.com/BoxOfDevs/Resources/master/travis/php7_linux.tar.gz'
+curl -o pmbin.tar.gz 'https://jenkins.pmmp.io/job/PHP-7.3-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz'
 echo "Unpacking binary..."
 tar -xzf pmbin.tar.gz
 
